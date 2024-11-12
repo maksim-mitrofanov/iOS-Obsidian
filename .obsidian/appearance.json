@@ -1,0 +1,16 @@
+{
+  "accentColor": "#4d923f",
+  "baseFontSize": 18,
+  "theme": "moonstone",
+  "cssTheme": "",
+  "translucency": false,
+  "showViewHeader": false,
+  "baseFontSizeAction": false,
+  "interfaceFontFamily": "Inter",
+  "textFontFamily": "Inter",
+  "monospaceFontFamily": "Inter",
+  "enabledCssSnippets": [
+    "customLineWidth",
+    "themeChatGPT"
+  ]
+}

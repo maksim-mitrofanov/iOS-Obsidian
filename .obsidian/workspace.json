@@ -1,0 +1,202 @@
+{
+  "main": {
+    "id": "cc70faf9754222d4",
+    "type": "split",
+    "children": [
+      {
+        "id": "57721fbff01394ae",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a45feba6ff2fe8e9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Copy on механизмы.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0b3e17c538d78ef9",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Copy on механизмы.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "586476d58dd4219b",
+    "type": "split",
+    "children": [
+      {
+        "id": "0eebaa20bca26649",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4cc696df44eaeb1c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "byModifiedTime"
+              }
+            }
+          },
+          {
+            "id": "4a0794a287829371",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "fd53600149064aa9",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 454.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "9a4f982043e451eb",
+    "type": "split",
+    "children": [
+      {
+        "id": "c3291245792b4f0b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "9cc75ceb68cfa5f5",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Copy on механизмы.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4a05b6ebd874bdc3",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Copy on механизмы.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6eef03c51e8d8c43",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "5baa4873d9a16cbb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Copy on механизмы.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Меню быстрого перехода": true,
+      "graph:Граф": false,
+      "canvas:Создать новый холст": true,
+      "daily-notes:Сегодняшняя заметка": false,
+      "templates:Вставить шаблон": true,
+      "command-palette:Открыть палитру команд": true
+    }
+  },
+  "active": "0b3e17c538d78ef9",
+  "lastOpenFiles": [
+    "Autorelease pool.md",
+    "Поведение коллекций как reference type.md",
+    "Copy on механизмы.md",
+    "RunLoop.md",
+    "Вопросы с собесов.md",
+    "3. Ссылки в Swift.md",
+    "4. Inout параметры функций.md",
+    "5. Перечисления.md",
+    "6. Структуры.md",
+    "7. Стирание типа.md",
+    "8. Дженерики.md",
+    "9. Класс.md",
+    "10. Протокол.md",
+    "11. Замыкания.md",
+    "12. Хеш.md",
+    "13. Сет.md",
+    "14. Опционал.md",
+    "15. GCD.md",
+    "16. Таймеры.md",
+    "17. Race condition.md",
+    "18. Жизненный цикл UIViewController.md",
+    "19. Async await.md",
+    "20. Как можно отложить исполнение кода?.md",
+    "21. Почему в SwiftUI вью - структуры.md",
+    "23. В чем разница UIView vs CALayer.md",
+    "24. Что за метод prepareForReuse?.md",
+    "Снимок экрана 2024-10-19 в 20.39.40.png",
+    "Без названия",
+    "21. Почему в SwiftUI вью - структуры",
+    "21. Почему в SwiftUI вью - структура, а не класс?",
+    "iOS Вопросы с собесов",
+    "Вопросы с собесов/Теория iOS",
+    "Вопросы с собесов/Практика iOS",
+    "Вопросы с собесов/Социалка",
+    "Заметки по ведению заметок",
+    "Вопросы с собесов/Без названия"
+  ]
+}

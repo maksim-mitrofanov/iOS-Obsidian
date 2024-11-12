@@ -1,0 +1,26 @@
+/* Стили для холста редактирования и просмотра */
+.markdown-preview-view,
+.cm-s-obsidian {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+    font-size: 21x; /* Можешь поменять размер, если нужно */
+}
+
+/* Стили заголовков для уменьшения жирности */
+.markdown-preview-view h1 {
+    font-weight: 500; /* Умеренная жирность для заголовка h1 */
+}
+
+.markdown-preview-view h2 {
+    font-weight: 400; /* Нормальная жирность для заголовка h2 */
+}
+
+.markdown-preview-view h3 {
+    font-weight: 300; /* Нормальная жирность для заголовка h3 */
+}
+
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+    font-weight: 200; /* Более тонкие заголовки для h4, h5, h6 */
+}
