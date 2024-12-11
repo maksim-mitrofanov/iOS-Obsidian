@@ -16,41 +16,60 @@ check_paths() {
         exit 1
     fi
     }
-}
 
-update_git() {
-    echo "Обновляю репозиторий из удалённого источника..."
-    cd "$DESTINATION_PATH" || exit
-    git fetch && git pull
+# Функция копирования файла
+copy_file() {
+    # Выполняем копирование
+    cp "$SOURCE_PATH" "$DESTINATION_PATH"
 
+    # Проверяем успешность копирования
     if [ $? -eq 0 ]; then
-            echo "Репозиторий успешно обновлён."
+        echo "Файл успешно скопирован в $DESTINATION_PATH"
     else
-            echo "Ошибка при обновлении репозитория!"
-            exit 1
+        echo "Ошибка при копировании файла"
+        exit 1
     fi
 }
 
-replace_file() {
+# Удаление существующего файла
+delete_existing_file() {
     local DEST_FILE="${DESTINATION_PATH}/$(basename "$SOURCE_PATH")"
-
     if [ -e "$DEST_FILE" ]; then
-        echo "Копирую файл из $DEST_FILE в $SOURCE_PATH..."
-        cp "$DEST_FILE" "$SOURCE_PATH"
-
+        echo "Файл уже существует в папке назначения: $DEST_FILE. Удаляем..."
+        rm "$DEST_FILE"
         if [ $? -eq 0 ]; then
-            echo "Файл успешно заменён в $SOURCE_PATH"
+            echo "Файл успешно удалён."
         else
-            echo "Ошибка при замене файла!"
+            echo "Ошибка при удалении файла!"
             exit 1
         fi
+    fi
+}
+
+# Обновление git.
+git_add_and_push() {
+    echo "Выполняю синхронизацию git."
+    current_date=$(date "+%Y-%m-%d %H:%M:%S")
+
+    git add .
+    git commit -m "Update database at: $current_date."
+    git push
+}
+
+# Переход в destination directory.
+go_to_destination_dir() {
+    if [ -d "$DESTINATION_PATH" ]; then
+        cd "$DESTINATION_PATH"
+        echo "Перешёл в директорию: $DESTINATION_PATH"
     else
-        echo "Файл для замены не найден: $DEST_FILE"
+        echo "Ошибка: Папка $DESTINATION_PATH не существует!"
         exit 1
     fi
 }
 
 # Основная программа
 check_paths
-update_git
-replace_file
+delete_existing_file
+copy_file
+go_to_destination_dir
+git_add_and_push

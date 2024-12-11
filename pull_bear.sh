@@ -15,82 +15,41 @@ check_paths() {
         echo "Папка назначения не найдена: $DESTINATION_PATH"
         exit 1
     fi
-    }
+}
 
-# Функция копирования файла
-copy_file_to_destination() {
-    # Выполняем копирование
-    cp "$SOURCE_PATH" "$DESTINATION_PATH"
-
-    # Проверяем успешность копирования
+# Обновление из git
+update_git() {
+    echo "Обновляю репозиторий из удалённого источника..."
+    cd "$DESTINATION_PATH" || exit
+    git fetch && git pull origin main
     if [ $? -eq 0 ]; then
-        echo "Файл успешно скопирован в $DESTINATION_PATH"
+        echo "Репозиторий успешно обновлён."
     else
-        echo "Ошибка при копировании файла"
+        echo "Ошибка при обновлении репозитория!"
         exit 1
     fi
 }
 
-copy_file_to_source() {
-    # Выполняем копирование
-    cp "$DESTINATION_PATH/database.sqlite" "$SOURCE_PATH"
-
-    # Проверяем успешность копирования
-    if [ $? -eq 0 ]; then
-        echo "Файл успешно скопирован в $SOURCE_PATH"
-    else
-        echo "Ошибка при копировании файла"
-        exit 1
-    fi
-}
-
-# Удаление существующего файла
-delete_existing_destination_file() {
+# Замена файла в исходной директории
+replace_file() {
     local DEST_FILE="${DESTINATION_PATH}/$(basename "$SOURCE_PATH")"
+
     if [ -e "$DEST_FILE" ]; then
-        echo "Файл уже существует в папке назначения: $DEST_FILE. Удаляем..."
-        rm "$DEST_FILE"
+        echo "Копирую файл из $DEST_FILE в $SOURCE_PATH..."
+        cp "$DEST_FILE" "$SOURCE_PATH"
         if [ $? -eq 0 ]; then
-            echo "Файл успешно удалён."
+            echo "Файл успешно заменён в $SOURCE_PATH"
         else
-            echo "Ошибка при удалении файла!"
+            echo "Ошибка при замене файла!"
             exit 1
         fi
-    fi
-}
-
-# Обновление git.
-git_add_and_push() {
-    echo "Выполняю синхронизацию git."
-    current_date=$(date "+%Y-%m-%d %H:%M:%S")
-
-    git add .
-    git commit -m "Update database at: $current_date."
-    git push
-}
-
-git_fetch_and_pull() {
-    echo "Выполняю синхронизацию git."
-    git fetch && git pull
-}
-
-# Переход в destination directory.
-go_to_destination_dir() {
-    if [ -d "$DESTINATION_PATH" ]; then
-        cd "$DESTINATION_PATH"
-        echo "Перешёл в директорию: $DESTINATION_PATH"
     else
-        echo "Ошибка: Папка $DESTINATION_PATH не существует!"
+        echo "Файл для замены не найден: $DEST_FILE"
         exit 1
     fi
 }
 
 # Основная программа
 check_paths
-go_to_destination_dir
-git_fetch_and_pull
-
-
-delete_existing_file
-copy_file
-git_add_and_push
+update_git
+replace_file
